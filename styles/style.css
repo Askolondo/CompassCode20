@@ -1,0 +1,83 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Literata");
+
+* {
+    padding: 0;
+    margin:  0;
+}
+
+:root {
+    --bg: #6D67E4;
+    --fg: #453C67;
+    --pC: #F2F7A1;
+    --sC: #46C2CB;
+    --c1: #FF7000;
+    --c2: #10A19D;
+    --c3: #FB2576;
+}
+
+.body {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    background-color:  pink;
+    height:  100vh;
+}
+
+/*Drawing the space for the NavBar with telling the element from which column to which column does it need to exist*/
+.NavBar{
+    grid-column: 1 / span 12;
+    grid-row: 1 / span 1;
+    background-color: var(--bg)
+}
+
+.Footer{
+    grid-column: 1 / span 12;
+    grid-row: 12 / span 1;
+    background-color: var(--bg)
+}
+
+.LeftSideBar {
+    grid-column: 1 / span 1;
+    grid-row: 10 / span 2;
+    background-color: var(--bg);
+}
+
+.RightSideBar{
+    grid-column: 12 / span 1;
+    grid-row: 2 / span 10;
+    background-color: var(--bg);
+}
+
+.PageBody {
+    grid-column: 2 / span 10;
+    grid-row: 2 / span 10;
+    background-color: var(--pC);
+}
+/*style for page body*/
+.PageBody{
+    background: radial-gradient(ellipse,var(--pC),var(--sC),var(--fg), transparent),
+     radial-gradient(ellipse at top,var(--c1),var(--c2),var(--c3), transparent);
+    -webkit-animation: AnimatedBG 12s ease-in-out infinite;
+    background-size: 400% 400%;
+}
+
+.Banner  {
+    text-align:  center;
+    font-size:  15pt;
+    font-family: 'Crimson', sans-serif;
+}
+
+@-webkit-keyframes AnimatedBG {
+    0%{
+        background-position: 0 50%;
+    }
+
+    50%{
+        background-position: 120% 100%;
+    }
+
+    100%{
+        background-position: 0 50%;
+    }
+}
